@@ -8,3 +8,17 @@ def factorial(n: int) -> int:
     for i in range(2, n + 1):
         result *= i
     return result
+
+
+def get_primes_up_to_100() -> list[int]:
+    """Генерирует список простых чисел в диапазоне от 2 до 100 (Средняя сложность № 5)."""
+    primes: list[int] = []
+    for num in range(2, 101):
+        is_prime = True
+        for divisor in range(2, int(num ** 0.5) + 1):
+            if num % divisor == 0:
+                is_prime = False
+                break
+        if is_prime:
+            primes.append(num)
+    return primes

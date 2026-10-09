@@ -32,3 +32,16 @@ def find_min_element(numbers: list[int | float]) -> int | float:
         if item < min_val:
             min_val = item
     return min_val
+
+def generate_fibonacci(count: int) -> list[int]:
+    """Генерирует последовательность Фибоначчи заданной длины count (Повышенная сложность № 3)."""
+    if not isinstance(count, int):
+        raise TypeError("Количество элементов должно быть целым числом.")
+    if count <= 0:
+        return []
+    if count == 1:
+        return [0]
+    sequence = [0, 1]
+    for _ in range(2, count):
+        sequence.append(sequence[-1] + sequence[-2])
+    return sequence

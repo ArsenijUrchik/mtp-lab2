@@ -22,3 +22,13 @@ def get_primes_up_to_100() -> list[int]:
         if is_prime:
             primes.append(num)
     return primes
+
+def find_min_element(numbers: list[int | float]) -> int | float:
+    """Находит минимальный элемент переданного числового списка (Средняя сложность № 9)."""
+    if not numbers:
+        raise ValueError("Список не должен быть пустым.")
+    min_val = numbers[0]
+    for item in numbers[1:]:
+        if item < min_val:
+            min_val = item
+    return min_val

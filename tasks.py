@@ -1,3 +1,6 @@
+import string
+
+
 def factorial(n: int) -> int:
     """Вычисляет факториал целого неотрицательного числа n (Средняя сложность № 3)."""
     if not isinstance(n, int):
@@ -23,6 +26,7 @@ def get_primes_up_to_100() -> list[int]:
             primes.append(num)
     return primes
 
+
 def find_min_element(numbers: list[int | float]) -> int | float:
     """Находит минимальный элемент переданного числового списка (Средняя сложность № 9)."""
     if not numbers:
@@ -32,6 +36,7 @@ def find_min_element(numbers: list[int | float]) -> int | float:
         if item < min_val:
             min_val = item
     return min_val
+
 
 def generate_fibonacci(count: int) -> list[int]:
     """Генерирует последовательность Фибоначчи заданной длины count (Повышенная сложность № 3)."""
@@ -44,7 +49,7 @@ def generate_fibonacci(count: int) -> list[int]:
     sequence = [0, 1]
     for _ in range(2, count):
         sequence.append(sequence[-1] + sequence[-2])
-    return sequenceimport string
+    return sequence
 
 
 def count_word_frequencies(filepath: str) -> dict[str, int]:

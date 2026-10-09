@@ -44,4 +44,15 @@ def generate_fibonacci(count: int) -> list[int]:
     sequence = [0, 1]
     for _ in range(2, count):
         sequence.append(sequence[-1] + sequence[-2])
-    return sequence
+    return sequenceimport string
+
+
+def count_word_frequencies(filepath: str) -> dict[str, int]:
+    """Считывает текстовый файл и подсчитывает частоту каждого слова (Повышенная сложность № 7)."""
+    frequencies: dict[str, int] = {}
+    with open(filepath, mode="r", encoding="utf-8") as file:
+        for line in file:
+            cleaned = line.lower().translate(str.maketrans("", "", string.punctuation + "—«»"))
+            for word in cleaned.split():
+                frequencies[word] = frequencies.get(word, 0) + 1
+    return frequencies
